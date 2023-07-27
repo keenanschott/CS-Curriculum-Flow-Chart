@@ -1,0 +1,58 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  background-color: #21314D;
+  color: white;
+  --bs-navbar-brand-hover-color: white;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  color: white;
+}
+
+.dropdown-toggle {
+  color: white;
+  border: none;
+}
+
+.dropdown-toggle:hover {
+  color: white;
+  border: none;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6c757d;
+  min-width: 200px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-item {
+  color: white;
+  padding: 10px 10px;
+}
+
+.dropdown-item:hover {
+  background-color: #D2492A;
+  color: white;
+}
+
+.dropdown-menu .dropdown-item.selected {
+  background-color: #D2492A;
+  color: white;
+}
+
+.dropdown-menu .dropdown-item.selected:hover {
+  background-color: #B93F28;
+  color: white;
+}
