@@ -16,9 +16,18 @@ function Flowchart() {
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
   const [showModal, setShowModal] = useState(false);
   const [selectedNodeId, setSelectedNodeId] = useState(null);
-  const [nodesData, setNodesData] = useState([]); 
+  const [nodesData, setNodesData] = useState([]);
   const [pulsatePreNodeIds, setPrePulsateNodeIds] = useState([]);
   const [pulsateCoNodeIds, setCoPulsateNodeIds] = useState([]);
+  const [completionStatus, setCompletionStatus] = useState({});
+
+  const handleYearChange = (year) => {
+    setCompletionStatus({}); // Reset the completion status
+  };
+
+  const handleTrackChange = (track) => {
+    setCompletionStatus({}); // Reset the completion status
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -90,7 +99,7 @@ function Flowchart() {
 
   const calculatePosition = (row, column) => {
     const nodeWidth = (screenWidth / columns) - (screenWidth / columns * 0.05);
-    const nodeHeight = ((screenHeight - footerHeight - navHeight) / rows) - ((screenHeight - footerHeight - navHeight) / rows * 0.1); 
+    const nodeHeight = ((screenHeight - footerHeight - navHeight) / rows) - ((screenHeight - footerHeight - navHeight) / rows * 0.1);
     const x = (column * (screenWidth / columns)) + (screenWidth / columns * 0.025);
     const y = (row * ((screenHeight - footerHeight - navHeight) / rows) + navHeight) + ((screenHeight - footerHeight - navHeight) / rows * 0.05);
     const fontSize = 10 + screenWidth / 200;
@@ -104,7 +113,7 @@ function Flowchart() {
     <div>
 
       <div style={{ height: '60px', backgroundColor: '#f0f0f0', position: 'relative', top: 0, left: 0, right: 0 }}>
-        <Navbar onDropdownChange={handleDropdownChange} />
+        <Navbar onDropdownChange={handleDropdownChange} onYearChange={handleYearChange} onTrackChange={handleTrackChange} />
       </div>
       <div className="container">
         <div className="row">
@@ -112,6 +121,7 @@ function Flowchart() {
             const { x, y, nodeWidth, nodeHeight, fontSize } = calculatePosition(node.row, node.column);
             const isPrePulsating = pulsatePreNodeIds.includes(node.id);
             const isCoPulsating = pulsateCoNodeIds.includes(node.id);
+            const selectedStatus = completionStatus[node.id] || 'incomplete';
             return (
               <div
                 key={node.id}
@@ -123,10 +133,15 @@ function Flowchart() {
                   top: y,
                   width: nodeWidth,
                   height: nodeHeight,
-                  border: `2px ${isPrePulsating ? 'solid black' : (isCoPulsating ? 'dashed blue' : 'solid ' + node.color)}`, 
+                  border: `2px ${isPrePulsating ? 'solid black' : (isCoPulsating ? 'dashed blue' : 'solid ' + node.color)}`,
                   padding: '5px',
                   borderRadius: '15px',
-                  background: 'white',
+                  background: selectedStatus === 'complete'
+                    ? 'lightgreen'
+                    : selectedStatus === 'in-progress'
+                      ? 'linear-gradient(to right, lightblue 50%, white 50%)'
+                      : 'white',
+                  color: 'black',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -136,8 +151,8 @@ function Flowchart() {
                   zIndex: -1,
                 }}
                 onClick={() => handleNodeClick(node.id)}
-                onMouseEnter={() => handleNodeMouseEnter(node.id)} 
-                onMouseLeave={handleNodeMouseLeave} 
+                onMouseEnter={() => handleNodeMouseEnter(node.id)}
+                onMouseLeave={handleNodeMouseLeave}
               >
                 {node.text}
               </div>
@@ -152,14 +167,17 @@ function Flowchart() {
 
 
 
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered > 
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered >
         <Modal.Header closeButton>
           <Modal.Title><h5>{selectedNodeId ? nodesData.find((node) => node.id === selectedNodeId).title : ""}</h5></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {selectedNodeId && (
             <NodeModalContent
-              nodeData={nodesData.find((node) => node.id === selectedNodeId)}
+              nodeData={nodesData.find((node) => node.id === selectedNodeId)} selectedStatus={completionStatus[selectedNodeId] || 'incomplete'} onStatusChange={(status) => setCompletionStatus((prevStatus) => ({
+                ...prevStatus,
+                [selectedNodeId]: status,
+              }))}
             />
           )}
         </Modal.Body>

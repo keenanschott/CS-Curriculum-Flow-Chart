@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NodeModalContent({ nodeData }) {
+function NodeModalContent({ nodeData, selectedStatus, onStatusChange }) {
 
     const darkerColor =
         nodeData.color === "#c285a3" ? "#935f76" : nodeData.color === "#5b9bd5" ? "#3a6a97" : "#5c636a";
@@ -42,7 +42,7 @@ function NodeModalContent({ nodeData }) {
                     {nodeData.credits !== "" ? nodeData.credits : "?"}
                 </div>
 
-                <select style={dropdownStyle}>
+                <select style={dropdownStyle} value={selectedStatus} onChange={(e) => onStatusChange(e.target.value)}>
                     <option value="incomplete">Incomplete</option>
                     <option value="in-progress">In-Progress</option>
                     <option value="complete">Complete</option>

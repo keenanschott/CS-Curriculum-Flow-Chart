@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 import './nav.css';
 
-const Navbar = ({ onDropdownChange }) => {
+const Navbar = ({ onDropdownChange, onYearChange, onTrackChange }) => {
   const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
   const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
   const [trackOptions, setTrackOptions] = React.useState([
@@ -16,6 +16,7 @@ const Navbar = ({ onDropdownChange }) => {
   ]); 
 
   const handleYearChange = (year) => {
+    onYearChange(year); // Callback to handle year change in Flowchart
     setSelectedYear(year);
     if (year === '2022-23') {
       setTrackOptions([
@@ -66,6 +67,7 @@ const Navbar = ({ onDropdownChange }) => {
   };
 
   const handleTrackChange = (track) => {
+    onTrackChange(track); // Callback to handle track change in Flowchart
     const selectedOption = {
       year: selectedYear,
       track: track,
