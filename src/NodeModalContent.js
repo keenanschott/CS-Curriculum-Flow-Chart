@@ -12,7 +12,7 @@ function NodeModalContent({ nodeData, selectedStatus, onStatusChange }) {
         width: '30px',
         height: '30px',
         borderRadius: '50%',
-        background: nodeData.color === "#00b050" ? "#6c757d" : nodeData.color,
+        background: nodeData.credits === "" ? "#6c757d" : nodeData.color,
         marginRight: '10px',
         color: 'white',
         fontWeight: 'bold',

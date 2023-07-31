@@ -131,7 +131,7 @@
     },
     {
         "id": "11",
-        "text": "CSCI 261",
+        "text": "CSCI 200",
         "color": "#5b9bd5",
         "row": 1,
         "column": 4,
@@ -196,7 +196,7 @@
     },
     {
         "id": "16",
-        "text": "CSCI 262",
+        "text": "CSCI 220",
         "color": "#5b9bd5",
         "row": 2,
         "column": 4,
@@ -205,7 +205,7 @@
         "title": "Data Structures and Algorithms",
         "credits": "3",
         "status": "incomplete",
-        "description": "This course teaches students the design and construction of data structures such as hash tables, trees, heaps, and graphs, analysis of operations on data structures, and design and analysis of algorithms on data structures such as graph search and minimum spanning tree algorithms.  Applications of data structures and algorithms on them are discussed in the context of computer systems.  Students will further refine programming skills in C++ by producing software implementations of selected data structures and algorithms. Prerequisite: CSCI261 with a C- or better."
+        "description": "This course teaches students the design and construction of data structures such as hash tables, trees, heaps, and graphs, analysis of operations on data structures, and design and analysis of algorithms on data structures such as graph search and minimum spanning tree algorithms.  Applications of data structures and algorithms on them are discussed in the context of computer systems.  Students will further refine programming skills in C++ by producing software implementations of selected data structures and algorithms. Prerequisite: CSCI200 with a C- or better."
     },
     {
         "id": "17",
@@ -287,16 +287,16 @@
     },
     {
         "id": "23",
-        "text": "Focus Area",
+        "text": "Free Elective",
         "color": "#00b050",
         "row": 3,
         "column": 5,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "Free Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A free elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "24",
@@ -339,29 +339,29 @@
     },
     {
         "id": "27",
-        "text": "Focus Area",
+        "text": "CSCI 403",
         "color": "#00b050",
         "row": 4,
         "column": 3,
-        "pre": [], 
+        "pre": ["16"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "Data Base Management",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "(I, II) Design and evaluation of information storage and retrieval systems, including defining and building a database and producing the necessary queries for access to the stored information. Relational database management systems, structured query language, and data storage facilities. Applications of data structures such as lists, inverted lists and trees. System security, maintenance, recovery and definition. Interfacing host languages to database systems and object-relational mapping tools. NoSQL databases and distributed databases. Prerequisite: CSCI200 with a grade of C- or higher or CSCI262 with a grade of C- or higher."
     },
     {
         "id": "28",
-        "text": "Focus Area",
+        "text": "Free Elective",
         "color": "#00b050",
         "row": 4,
         "column": 4,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "Free Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A free elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "29",
@@ -417,16 +417,16 @@
     },
     {
         "id": "33",
-        "text": "Focus Area",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 5,
         "column": 4,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "CS Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "34",
@@ -469,42 +469,42 @@
     },
     {
         "id": "37",
-        "text": "Focus Area",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 7,
         "column": 2,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "CS Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "38",
-        "text": "Focus Area",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 7,
         "column": 3,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "CS Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "39",
-        "text": "Focus Area",
+        "text": "Free Elective",
         "color": "#00b050",
         "row": 7,
         "column": 4,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "Free Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A free elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "40",
@@ -534,41 +534,41 @@
     },
     {
         "id": "42",
-        "text": "Focus Area",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 8,
         "column": 2,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "CS Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "43",
-        "text": "Focus Area",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 8,
         "column": 3,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "CS Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
         "id": "44",
-        "text": "Focus Area",
+        "text": "Free Elective",
         "color": "#00b050",
         "row": 8,
         "column": 4,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
+        "title": "Free Elective",
+        "credits": "3",
         "status": "incomplete",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "description": "A free elective course. Choose any eligible course from the course catalog."
     }
 ]

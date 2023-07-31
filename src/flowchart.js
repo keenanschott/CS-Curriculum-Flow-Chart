@@ -21,14 +21,6 @@ function Flowchart() {
   const [pulsateCoNodeIds, setCoPulsateNodeIds] = useState([]);
   const [completionStatus, setCompletionStatus] = useState({});
 
-  const handleYearChange = (year) => {
-    setCompletionStatus({}); // Reset the completion status
-  };
-
-  const handleTrackChange = (track) => {
-    setCompletionStatus({}); // Reset the completion status
-  };
-
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
@@ -113,7 +105,7 @@ function Flowchart() {
     <div>
 
       <div style={{ height: '60px', backgroundColor: '#f0f0f0', position: 'relative', top: 0, left: 0, right: 0 }}>
-        <Navbar onDropdownChange={handleDropdownChange} onYearChange={handleYearChange} onTrackChange={handleTrackChange} />
+        <Navbar onDropdownChange={handleDropdownChange} />
       </div>
       <div className="container">
         <div className="row">
@@ -169,7 +161,7 @@ function Flowchart() {
 
       <Modal show={showModal} onHide={() => setShowModal(false)} centered >
         <Modal.Header closeButton>
-          <Modal.Title><h5>{selectedNodeId ? nodesData.find((node) => node.id === selectedNodeId).title : ""}</h5></Modal.Title>
+          <Modal.Title><h5>{nodesData.find((node) => node.id === selectedNodeId) ? nodesData.find((node) => node.id === selectedNodeId).title : ""}</h5></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {selectedNodeId && (
