@@ -1,10 +1,38 @@
-import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Dropdown, Modal, Button } from 'react-bootstrap';
 import './nav.css';
+import axios from 'axios'; // Import Axios to make API calls
 
 const Navbar = ({ onDropdownChange }) => {
   const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
   const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
+
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loginMessage, setLoginMessage] = useState('');
+
+  const backendURL = 'http://localhost:3001'; // Update this with the correct backend URL
+  const apiClient = axios.create({
+    baseURL: backendURL,
+  });
+
+  const handleLoginSubmit = async () => {
+    try {
+      const response = await apiClient.post('/api/login', {
+        username,
+        password,
+      });
+
+      if (response.status === 200) {
+        setLoginMessage('Login successful');
+        // You can redirect or perform any actions after successful login here
+      }
+    } catch (error) {
+      setLoginMessage('Login failed');
+    }
+  };
+
   const [trackOptions, setTrackOptions] = React.useState([
     'Computer Science',
     'CS + Business',
@@ -103,7 +131,44 @@ const Navbar = ({ onDropdownChange }) => {
           ))}
         </Dropdown.Menu>
       </Dropdown>
+      <button className="login-button" onClick={() => setShowLoginModal(true)}>
+          Login
+        </button>
       </div>
+
+            <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        {loginMessage && <p>{loginMessage}</p>}
+          <div>
+            <label>Username:</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowLoginModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleLoginSubmit}>
+            Login
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </nav>
   );
 };
