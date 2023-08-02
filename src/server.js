@@ -83,13 +83,18 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-app.post('/api/saveCompletionStatus', async (req, res) => {
+app.post('/api/updateUserStatus', async (req, res) => {
   try {
-    const { userId, completionStatus } = req.body;
-    const query = `
-      INSERT INTO data (id, data)
-      VALUES ($1, $2)`;
-    await pool.query(query, [userId, nodeId, completionStatus]);
+    console.log(req.body);
+    const { completionStatus, username, signupUsername } = req.body;
+    const user = username !== '' ? username : signupUsername;
+    const getUserIdQuery = `SELECT id FROM users WHERE username = $1`;
+    const getUserIdResult = await pool.query(getUserIdQuery, [user]);
+    const userId = getUserIdResult.rows[0].id;
+
+    const query = `UPDATE data SET data = $2 WHERE id = $1`;
+    await pool.query(query, [userId, completionStatus]);
+    
     res.status(200).json({ message: 'Completion status saved successfully' });
   } catch (error) {
     console.error('Error saving completion status:', error);

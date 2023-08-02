@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Dropdown, Modal, Button } from 'react-bootstrap';
 import './nav.css';
 import axios from 'axios'; // Import Axios to make API calls
 
-const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => {
+const Navbar = ({ onDropdownChange, completionStatus }) => {
   const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
   const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
 
@@ -40,6 +40,25 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
       setSignupMessage('Sign up failed');
     }
   };
+
+  const updateUserStatus = useCallback(async () => {
+    try {
+      if (isAuthenticated) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        await apiClient.post('/api/updateUserStatus', {
+          completionStatus,
+          username,
+          signupUsername,
+        });
+      }
+    } catch (error) {
+      console.error('Error updating user data:', error);
+    }
+  }, [isAuthenticated, completionStatus, username, signupUsername]);
+  
+  useEffect(() => {
+    updateUserStatus();
+  }, [completionStatus, isAuthenticated, updateUserStatus]);
 
   const handleShowSignupModal = () => {
     setShowLoginModal(false); // Close the login modal
