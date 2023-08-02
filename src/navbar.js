@@ -41,10 +41,10 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
     }
   };
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   const updateUserStatus = useCallback(async () => {
     try {
       if (isAuthenticated) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         await apiClient.post('/api/updateUserStatus', {
           completionStatus,
           username,
@@ -54,11 +54,12 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
     } catch (error) {
       console.error('Error updating user data:', error);
     }
-  }, [isAuthenticated, completionStatus, username, signupUsername]);
+  }, [completionStatus]);
   
   useEffect(() => {
     updateUserStatus();
-  }, [completionStatus, isAuthenticated, updateUserStatus]);
+  }, [completionStatus]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const handleShowSignupModal = () => {
     setShowLoginModal(false); // Close the login modal
