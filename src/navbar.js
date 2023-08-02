@@ -3,7 +3,7 @@ import { Dropdown, Modal, Button } from 'react-bootstrap';
 import './nav.css';
 import axios from 'axios'; // Import Axios to make API calls
 
-const Navbar = ({ onDropdownChange }) => {
+const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => {
   const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
   const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
 
@@ -17,6 +17,35 @@ const Navbar = ({ onDropdownChange }) => {
     baseURL: backendURL,
   });
 
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const [signupUsername, setSignupUsername] = useState('');
+  const [signupPassword, setSignupPassword] = useState('');
+  const [signupMessage, setSignupMessage] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to track authentication status
+
+  const handleSignupSubmit = async () => {
+    try {
+      const response = await apiClient.post('/api/signup', {
+        username: signupUsername,
+        password: signupPassword,
+      });
+
+      if (response.status === 200) {
+        setSignupMessage('Sign up successful');
+        setIsAuthenticated(true); // Set isAuthenticated to true after successful sign up
+        setShowSignupModal(false); // Close the signup modal
+        // You can perform any actions after successful sign up here
+      }
+    } catch (error) {
+      setSignupMessage('Sign up failed');
+    }
+  };
+
+  const handleShowSignupModal = () => {
+    setShowLoginModal(false); // Close the login modal
+    setShowSignupModal(true); // Show the sign-up modal
+  };
+
   const handleLoginSubmit = async () => {
     try {
       const response = await apiClient.post('/api/login', {
@@ -26,11 +55,23 @@ const Navbar = ({ onDropdownChange }) => {
 
       if (response.status === 200) {
         setLoginMessage('Login successful');
+        setIsAuthenticated(true); // Set isAuthenticated to true after successful login
+        setShowLoginModal(false); // Close the login modal
         // You can redirect or perform any actions after successful login here
       }
     } catch (error) {
       setLoginMessage('Login failed');
     }
+  };
+
+  const handleLogout = () => {
+    // Perform any actions you want to perform during logout here
+
+    setUsername('');
+    setPassword('');
+    setSignupUsername('');
+    setSignupPassword('');
+    setIsAuthenticated(false); // Set isAuthenticated to false to log out the user
   };
 
   const [trackOptions, setTrackOptions] = React.useState([
@@ -131,9 +172,21 @@ const Navbar = ({ onDropdownChange }) => {
           ))}
         </Dropdown.Menu>
       </Dropdown>
-      <button className="login-button" onClick={() => setShowLoginModal(true)}>
-          Login
+      {isAuthenticated ? (
+          // If authenticated, show the "Save" button
+          <>
+          <button className="logout-button" onClick={handleLogout}>
+          Logout
         </button>
+        </>
+        ) : (
+          // If not authenticated, show the "Login" and "Sign Up" buttons
+          <>
+            <button className="login-button" onClick={() => setShowLoginModal(true)}>
+              Login
+            </button>
+          </>
+        )}
       </div>
 
             <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)}>
@@ -166,9 +219,46 @@ const Navbar = ({ onDropdownChange }) => {
           <Button variant="primary" onClick={handleLoginSubmit}>
             Login
           </Button>
+          <Button variant="secondary" onClick={handleShowSignupModal}>
+              Sign Up
+            </Button>
         </Modal.Footer>
       </Modal>
 
+
+
+      <Modal show={showSignupModal} onHide={() => setShowSignupModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Sign Up</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {signupMessage && <p>{signupMessage}</p>}
+          <div>
+            <label>Username:</label>
+            <input
+              type="text"
+              value={signupUsername}
+              onChange={(e) => setSignupUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <label>Password:</label>
+            <input
+              type="password"
+              value={signupPassword}
+              onChange={(e) => setSignupPassword(e.target.value)}
+            />
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowSignupModal(false)}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSignupSubmit}>
+            Sign Up
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </nav>
   );
 };
