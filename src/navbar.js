@@ -23,6 +23,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
   const [signupPassword, setSignupPassword] = useState('');
   const [signupMessage, setSignupMessage] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false); // State to track authentication status
+  const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
 
   const handleSignupSubmit = async () => {
     try {
@@ -94,6 +95,11 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
   };
 
   const handleLogout = () => {
+    // Open the logout confirmation modal
+    setShowLogoutConfirmation(true);
+  };
+
+  const handleConfirmLogout = () => {
     // Perform any actions you want to perform during logout here
 
     setUsername('');
@@ -101,6 +107,14 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
     setSignupUsername('');
     setSignupPassword('');
     setIsAuthenticated(false); // Set isAuthenticated to false to log out the user
+
+    // Close the logout confirmation modal
+    setShowLogoutConfirmation(false);
+  };
+
+  const handleCancelLogout = () => {
+    // Close the logout confirmation modal if the user cancels logout
+    setShowLogoutConfirmation(false);
   };
 
   const [trackOptions, setTrackOptions] = React.useState([
@@ -174,7 +188,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
 
   return (
     <nav className="navbar">
-      <span className="navbar-brand">CS Curriculum Flow Chart</span>
+      <span className="navbar-brand">CS Curriculum Flowchart</span>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Dropdown style={{ marginRight: '10px' }}>
           <Dropdown.Toggle variant="secondary" id="yearDropdown">
@@ -275,11 +289,11 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
           <Button variant="secondary" onClick={() => setShowLoginModal(false)}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleLoginSubmit}>
-            Login
-          </Button>
           <Button variant="secondary" onClick={handleShowSignupModal}>
             Sign Up
+          </Button>
+          <Button variant="secondary" onClick={handleLoginSubmit}>
+            Login
           </Button>
         </Modal.Footer>
       </Modal>
@@ -313,8 +327,25 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
           <Button variant="secondary" onClick={() => setShowSignupModal(false)}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleSignupSubmit}>
+          <Button variant="secondary" onClick={handleSignupSubmit}>
             Sign Up
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showLogoutConfirmation} onHide={() => setShowLogoutConfirmation(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Logout</Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ textAlign : 'left' }}>
+          Are you sure you want to log out?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCancelLogout}>
+            Cancel
+          </Button>
+          <Button variant="secondary" onClick={handleConfirmLogout}>
+            Logout
           </Button>
         </Modal.Footer>
       </Modal>
