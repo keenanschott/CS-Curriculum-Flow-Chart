@@ -34,7 +34,6 @@ app.post('/api/login', async (req, res) => {
       // User exists, you can do further checks here, like comparing passwords
       // For simplicity, let's assume the password is correct for any existing user
       // In a real application, you should hash and compare passwords securely
-
       const user = result.rows[0];
       const isPasswordValid = await bcrypt.compare(password, user.password);
 
@@ -85,7 +84,6 @@ app.post('/api/login', async (req, res) => {
 
 app.post('/api/updateUserStatus', async (req, res) => {
   try {
-    console.log(req.body);
     const { completionStatus, username, signupUsername } = req.body;
     const user = username !== '' ? username : signupUsername;
     const getUserIdQuery = `SELECT id FROM users WHERE username = $1`;
@@ -116,6 +114,35 @@ app.get('/', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
       }
 });
+
+app.post('/api/getCompletionStatus', async (req, res) => {
+  try {
+    const { username } = req.body;
+    const getUserIdQuery = `SELECT id FROM users WHERE username = $1`;
+    const getUserIdResult = await pool.query(getUserIdQuery, [username]);
+
+    if (getUserIdResult.rows.length === 0) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    const userId = getUserIdResult.rows[0].id;
+
+    const query = `SELECT data FROM data WHERE id = $1`;
+    const dataResult = await pool.query(query, [userId]);
+
+    if (dataResult.rows.length === 0) {
+      return res.status(404).json({ error: 'Data not found for this user' });
+    }
+
+    const jsonData = dataResult.rows[0].data;
+
+    res.status(200).json({ message: 'Completion status retrieved successfully', data: jsonData });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 // Start the server
 const port = 3001; // Replace with your desired port number

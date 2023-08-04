@@ -2,8 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Dropdown, Modal, Button } from 'react-bootstrap';
 import './nav.css';
 import axios from 'axios'; // Import Axios to make API calls
+import userIcon from './user.png';
 
-const Navbar = ({ onDropdownChange, completionStatus }) => {
+const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => {
   const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
   const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
 
@@ -55,7 +56,7 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
       console.error('Error updating user data:', error);
     }
   }, [completionStatus]);
-  
+
   useEffect(() => {
     updateUserStatus();
   }, [completionStatus]);
@@ -72,6 +73,14 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
         username,
         password,
       });
+
+
+      const completionStatusResponse = await apiClient.post('/api/getCompletionStatus', {
+        username,
+      });
+      console.log(completionStatusResponse.data.data);
+      setCompletionStatus(completionStatusResponse.data.data);
+
 
       if (response.status === 200) {
         setLoginMessage('Login successful');
@@ -102,7 +111,7 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
     'CS + Robotics & Intelligent Systems',
     'CS + Space',
     'CS + Research Honors',
-  ]); 
+  ]);
 
   const handleYearChange = (year) => {
     setSelectedYear(year);
@@ -151,7 +160,7 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
         'CS + Robotics & Intelligent Systems',
       ]);
     }
-    setSelectedTrack('Track'); 
+    setSelectedTrack('Track');
   };
 
   const handleTrackChange = (track) => {
@@ -167,54 +176,84 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
     <nav className="navbar">
       <span className="navbar-brand">CS Curriculum Flow Chart</span>
       <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <Dropdown style={{ marginRight: '10px' }}>
-        <Dropdown.Toggle variant="secondary" id="yearDropdown">
-          {selectedYear}
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item className={selectedYear === '2022-23' ? 'selected' : ''} onClick={() => handleYearChange('2022-23')}>2022-23</Dropdown.Item>
-          <Dropdown.Item className={selectedYear === '2021-22' ? 'selected' : ''} onClick={() => handleYearChange('2021-22')}>2021-22</Dropdown.Item>
-          <Dropdown.Item className={selectedYear === '2020-21' ? 'selected' : ''} onClick={() => handleYearChange('2020-21')}>2020-21</Dropdown.Item>
-          <Dropdown.Item className={selectedYear === '2019-20' ? 'selected' : ''} onClick={() => handleYearChange('2019-20')}>2019-20</Dropdown.Item>
-          <Dropdown.Item className={selectedYear === '2018-19' ? 'selected' : ''} onClick={() => handleYearChange('2018-19')}>2018-19</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-      <Dropdown>
-        <Dropdown.Toggle variant="secondary" id="trackDropdown">
-          {selectedTrack}
-        </Dropdown.Toggle>
-        <Dropdown.Menu>
-          {trackOptions.map((track) => (
-            <Dropdown.Item key={track} onClick={() => handleTrackChange(track)}
-            className={selectedTrack === track ? 'selected' : ''}>
-              {track}
-            </Dropdown.Item>
-          ))}
-        </Dropdown.Menu>
-      </Dropdown>
-      {isAuthenticated ? (
-          // If authenticated, show the "Save" button
+        <Dropdown style={{ marginRight: '10px' }}>
+          <Dropdown.Toggle variant="secondary" id="yearDropdown">
+            {selectedYear}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item className={selectedYear === '2022-23' ? 'selected' : ''} onClick={() => handleYearChange('2022-23')}>2022-23</Dropdown.Item>
+            <Dropdown.Item className={selectedYear === '2021-22' ? 'selected' : ''} onClick={() => handleYearChange('2021-22')}>2021-22</Dropdown.Item>
+            <Dropdown.Item className={selectedYear === '2020-21' ? 'selected' : ''} onClick={() => handleYearChange('2020-21')}>2020-21</Dropdown.Item>
+            <Dropdown.Item className={selectedYear === '2019-20' ? 'selected' : ''} onClick={() => handleYearChange('2019-20')}>2019-20</Dropdown.Item>
+            <Dropdown.Item className={selectedYear === '2018-19' ? 'selected' : ''} onClick={() => handleYearChange('2018-19')}>2018-19</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+        <Dropdown>
+          <Dropdown.Toggle variant="secondary" id="trackDropdown">
+            {selectedTrack}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            {trackOptions.map((track) => (
+              <Dropdown.Item key={track} onClick={() => handleTrackChange(track)}
+                className={selectedTrack === track ? 'selected' : ''}>
+                {track}
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
+        {isAuthenticated ? (
           <>
-          <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
+          <img
+            src={userIcon}
+            alt="User Icon"
+            style={{
+              height: '30px',
+              marginLeft: '6px',
+              marginTop: '3px',
+              cursor: 'pointer',
+              filter: 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)',
+              transition: 'filter 0.3s', // Add a transition for smooth effect
+            }}
+            onClick={() => handleLogout()}
+            onMouseEnter={(e) => {
+              e.target.style.filter = 'brightness(0) saturate(100%) invert(41%) sepia(10%) saturate(382%) hue-rotate(169deg) brightness(89%) contrast(92%)'; 
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.filter = 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)'; 
+            }}
+          />
         </>
         ) : (
-          // If not authenticated, show the "Login" and "Sign Up" buttons
           <>
-            <button className="login-button" onClick={() => setShowLoginModal(true)}>
-              Login
-            </button>
+            <img
+              src={userIcon}
+              alt="User Icon"
+              style={{
+                height: '30px',
+                marginLeft: '6px',
+                marginTop: '3px',
+                cursor: 'pointer',
+                filter: 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)',
+                transition: 'filter 0.3s', // Add a transition for smooth effect
+              }}
+              onClick={() => setShowLoginModal(true)}
+              onMouseEnter={(e) => {
+                e.target.style.filter = 'brightness(0) saturate(100%) invert(41%) sepia(10%) saturate(382%) hue-rotate(169deg) brightness(89%) contrast(92%)'; 
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.filter = 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)'; 
+              }}
+            />
           </>
         )}
       </div>
 
-            <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)}>
+      <Modal show={showLoginModal} onHide={() => setShowLoginModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {loginMessage && <p>{loginMessage}</p>}
+          {loginMessage && <p>{loginMessage}</p>}
           <div>
             <label>Username:</label>
             <input
@@ -240,8 +279,8 @@ const Navbar = ({ onDropdownChange, completionStatus }) => {
             Login
           </Button>
           <Button variant="secondary" onClick={handleShowSignupModal}>
-              Sign Up
-            </Button>
+            Sign Up
+          </Button>
         </Modal.Footer>
       </Modal>
 

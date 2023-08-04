@@ -105,7 +105,7 @@ function Flowchart() {
     <div>
 
       <div style={{ height: '60px', backgroundColor: '#f0f0f0', position: 'relative', top: 0, left: 0, right: 0 }}>
-        <Navbar onDropdownChange={handleDropdownChange} completionStatus={completionStatus} />
+        <Navbar onDropdownChange={handleDropdownChange} completionStatus={completionStatus} setCompletionStatus={setCompletionStatus} />
       </div>
       <div className="container">
         <div className="row">
