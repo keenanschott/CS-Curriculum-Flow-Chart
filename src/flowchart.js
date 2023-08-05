@@ -129,9 +129,9 @@ function Flowchart() {
                   padding: '5px',
                   borderRadius: '15px',
                   background: selectedStatus === 'complete'
-                    ? 'lightgreen'
+                    ? 'linear-gradient(135deg, white 90%, lightgreen 10%)'
                     : selectedStatus === 'in-progress'
-                      ? 'linear-gradient(to right, lightblue 50%, white 50%)'
+                      ? 'linear-gradient(135deg, white 90%, lightblue 10%)'
                       : 'white',
                   color: 'black',
                   display: 'flex',

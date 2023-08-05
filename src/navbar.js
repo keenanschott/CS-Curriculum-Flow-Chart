@@ -33,9 +33,9 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
       });
 
       if (response.status === 200) {
-        setSignupMessage('Sign up successful');
         setIsAuthenticated(true); // Set isAuthenticated to true after successful sign up
         setShowSignupModal(false); // Close the signup modal
+        setLoginMessage('');
         // You can perform any actions after successful sign up here
       }
     } catch (error) {
@@ -79,18 +79,17 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
       const completionStatusResponse = await apiClient.post('/api/getCompletionStatus', {
         username,
       });
-      console.log(completionStatusResponse.data.data);
       setCompletionStatus(completionStatusResponse.data.data);
 
 
       if (response.status === 200) {
-        setLoginMessage('Login successful');
         setIsAuthenticated(true); // Set isAuthenticated to true after successful login
+        setLoginMessage('');
         setShowLoginModal(false); // Close the login modal
         // You can redirect or perform any actions after successful login here
       }
     } catch (error) {
-      setLoginMessage('Login failed');
+      setLoginMessage('Login failed, try again!');
     }
   };
 
@@ -267,9 +266,8 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {loginMessage && <p>{loginMessage}</p>}
           <div>
-            <label>Username:</label>
+            <label style={{ marginRight: '10px'}} >Username: </label>
             <input
               type="text"
               value={username}
@@ -277,13 +275,14 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
             />
           </div>
           <div>
-            <label>Password:</label>
+            <label style={{ marginRight: '15px'}} >Password:</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {loginMessage && <p style={{ color: 'red', marginBottom: '0px' }} >{loginMessage}</p>}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowLoginModal(false)}>
@@ -307,7 +306,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
         <Modal.Body>
           {signupMessage && <p>{signupMessage}</p>}
           <div>
-            <label>Username:</label>
+            <label style={{ marginRight: '10px'}} >Username: </label>
             <input
               type="text"
               value={signupUsername}
@@ -315,7 +314,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
             />
           </div>
           <div>
-            <label>Password:</label>
+            <label style={{ marginRight: '15px'}} >Password:</label>
             <input
               type="password"
               value={signupPassword}

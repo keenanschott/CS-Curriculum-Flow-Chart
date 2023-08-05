@@ -4,45 +4,31 @@ const { Pool } = require('pg');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 
-// Replace these database configuration values with your own
 const dbConfig = {
   user: 'ciphdhty',
   host: 'hansken.db.elephantsql.com',
   database: 'ciphdhty',
   password: 'skkBqLbyMJ1dP5U-Rs2XbHJ8dI47zBv_',
-  port: 5432, // Default PostgreSQL port is 5432
+  port: 5432, 
 };
 
 const pool = new Pool(dbConfig);
-
 app.use(cors());
 app.use(express.json());
 
 app.post('/api/login', async (req, res) => {
     const { username, password } = req.body;
-  
     try {
-      // Check if the user exists in the database
       const query = 'SELECT * FROM users WHERE username = $1';
       const result = await pool.query(query, [username]);
-  
       if (result.rowCount === 0) {
-        // User does not exist
-        return res.status(404).json({ message: 'User not found' });
+        return res.status(404).json({ message: 'User not found' }); // user does not exist
       }
-  
-      // User exists, you can do further checks here, like comparing passwords
-      // For simplicity, let's assume the password is correct for any existing user
-      // In a real application, you should hash and compare passwords securely
       const user = result.rows[0];
       const isPasswordValid = await bcrypt.compare(password, user.password);
-
       if (!isPasswordValid) {
-        // Passwords do not match
-        return res.status(401).json({ message: 'Incorrect password' });
+        return res.status(401).json({ message: 'Incorrect password' }); // passwords do not match
       }
-  
-      // Send a success response back to the frontend
       res.status(200).json({ message: 'Login successful' });
     } catch (error) {
       console.error('Error during login:', error);

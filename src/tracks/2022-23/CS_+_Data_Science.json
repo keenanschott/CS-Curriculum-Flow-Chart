@@ -9,6 +9,7 @@
         "co": [],
         "title": "Calculus for Scientists and Engineers I",
         "credits": "4",
+        "status": "incomplete",
         "description": "(I, II, S) First course in the calculus sequence, including elements of plane geometry. Functions, limits, continuity, derivatives and their application. Definite and indefinite integrals; Prerequisite: precalculus. 4 hours lecture; 4 semester hours. Approved for Colorado Guaranteed General Education transfer. Equivalency for GT-MA1."
     },
     {
@@ -21,6 +22,7 @@
         "co": [],
         "title": "Nature and Human Values",
         "credits": "4",
+        "status": "incomplete",
         "description": "Nature and Human Values will focus on diverse views and critical questions concerning traditional and contemporary issues linking the quality of human life and Nature, and their interdependence. The course will examine various disciplinary and interdisciplinary approaches regarding two major questions: 1) How has Nature affected the quality of human life and the formulation of human values and ethics? (2) How have human actions, values, and ethics affected Nature? These issues will use cases and examples taken from across time and cultures. Themes will include but are not limited to population, natural resources, stewardship of the Earth, and the future of human society. This is a writing-intensive course that will provide instruction and practice in expository writing, using the disciplines and perspectives of the Humanities and Social Sciences. 4 hours lecture/seminar; 4 semester hours." 
     },
     {
@@ -33,6 +35,7 @@
         "co": [],
         "title": "Physical Activites 1-2XX",
         "credits": "0.5",
+        "status": "incomplete",
         "description": "(I) A general overview of life fitness basics which includes exposure to educational units of Nutrition, Stress Management, Drug and Alcohol Awareness. Instruction in Fitness units provides the student an opportunity for learning and the beginning basics for a healthy life style. 2 hours lab; 0.5 semester hours. Repeatable for credit."
     },
     {
@@ -45,6 +48,7 @@
         "co": [],
         "title": "Principles of Chemistry I",
         "credits": "4",
+        "status": "incomplete",
         "description": "Study of matter and energy based on atomic structure, correlation of properties of elements with position in periodic chart, chemical bonding, geometry of molecules, phase changes, stoichiometry, solution chemistry, gas laws, and thermochemistry. 3 hours lecture, 3 hours lab; 4 semester hours. Approved for Colorado Guaranteed General Education transfer. Equivalency for GT-SC1."
     },
     {
@@ -57,6 +61,7 @@
         "co": [],
         "title": "Freshman Success Seminar",
         "credits": "0.5", 
+        "status": "incomplete",
         "description": "FIRST-YEAR ADVISING AND MENTORING PROGRAM is a college transition course, taught in small groups. Emphasis is placed on fostering connectedness to CSM, developing an appreciation of the value of a Mines education, and learning the techniques and University resources that will allow freshmen to develop to their fullest potential at CSM. Course Objectives: Become an integrated member of the CSM community; explore, select and connect with an academic major; and develop as a person and a student. 9 meetings during semester; 0.5 semester hours."
     },
     {
@@ -69,6 +74,7 @@
         "co": [],
         "title": "Computer Science for STEM",
         "credits": "3",
+        "status": "incomplete",
         "description": "Introduction to programming. Intended for students with no prior experience. Teaches basic programming constructs including data types, conditionals, loops, file I/O, functions, and objects in Python 3. Also covers topics vital to STEM computing, such as data science, best practices for code development, and software ethics."
     },
     {
@@ -81,6 +87,7 @@
         "co": ["8"],
         "title": "Calculus for Scientists and Engineers II",
         "credits": "4",
+        "status": "incomplete",
         "description": "(I, II, S) Vectors, applications and techniques of integration, infinite series, and an introduction to multivariate functions and surfaces. Prerequisite: Grade of C- or better in MATH111. 4 hours lecture; 4 semester hours. Approved for Colorado Guaranteed General Education transfer. Equivalency for GT-MA1."
     },
     {
@@ -93,6 +100,7 @@
         "co": ["7"],
         "title": "Physics I - Mechanics",
         "credits": "4.5",
+        "status": "incomplete",
         "description": "(I,II,S) A first course in physics covering the basic principles of mechanics using vectors and calculus. The course consists of a fundamental treatment of the concepts and applications of kinematics and dynamics of particles and systems of particles, including Newtons laws, energy and momentum, rotation, oscillations, and waves. Prerequisite: MATH111. Co-requisites: MATH112 or MATH113 or MATH122. 2 hours lecture; 4 hours studio; 4.5 semester hours. Approved for Colorado Guaranteed General Education transfer. Equivalency for GT-SC1."
     },
     {
@@ -105,6 +113,7 @@
         "co": [],
         "title": "Physical Activites 1-2XX",
         "credits": "0.5",
+        "status": "incomplete",
         "description": "(I) A general overview of life fitness basics which includes exposure to educational units of Nutrition, Stress Management, Drug and Alcohol Awareness. Instruction in Fitness units provides the student an opportunity for learning and the beginning basics for a healthy life style. 2 hours lab; 0.5 semester hours. Repeatable for credit."
     },
     {
@@ -117,11 +126,12 @@
         "co": [],
         "title": "Cornerstone - Design I",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II, S) Design I teaches students how to solve open-ended problems in a hands-on manner using critical thinking and workplace skills. Students work in multidisciplinary teams to learn through doing, with emphasis on defining and diagnosing the problem through a holistic lens of technology, people and culture. Students follow a user-centered design methodology throughout the process, seeking to understand a problem from multiple perspectives before attempting to solve it. Students learn and apply specific skills throughout the semester, including: communication (written, oral, graphical), project management, concept visualization, critical thinking, effective teamwork, as well as building and iterating solutions."
     },
     {
         "id": "11",
-        "text": "CSCI 261",
+        "text": "CSCI 200",
         "color": "#5b9bd5",
         "row": 1,
         "column": 4,
@@ -129,6 +139,7 @@
         "co": [],
         "title": "Foundational Programming Concepts & Design",
         "credits": "3",
+        "status": "incomplete",
         "description": "This course teaches students C++, how to manage memory properly & efficiently at run time, the principles of object-oriented programming, and how to create an algorithm using data structures & abstraction to solve a problem.  Recursive data structures & algorithms will be constructed & analyzed when solving problems.  Initial principal components of software engineering and design will be introduced and used when drafting a solution to a problem.  Programs will be developed using a command line interface. Prerequisite: CSCI101 or CSCI128."
     },
     {
@@ -141,6 +152,7 @@
         "co": ["13"],
         "title": "Calculus for Scientists and Engineers III",
         "credits": "4",
+        "status": "incomplete",
         "description": "(I, II, S) Multivariable calculus, including partial derivatives, multiple integrals, and vector calculus. Prerequisites: Grade of C- or better in MATH112 or MATH122 or Concurrent Enrollment in MATH113. 4 hours lecture; 4 semester hours. Approved for Colorado Guaranteed General Education transfer. Equivalency for GT-MA1."
     },
     {
@@ -153,6 +165,7 @@
         "co": ["12"],
         "title": "Physics II - Electromagnetism and Optics",
         "credits": "4.5",
+        "status": "incomplete",
         "description": "(I, II, S) Continuation of PHGN100. Introduction to the fundamental laws and concepts of electricity and magnetism, electromagnetic devices, electromagnetic behavior of materials, applications to simple circuits, electromagnetic radiation, and an introduction to optical phenomena. Prerequisite: Grade of C- or higher in PHGN100, concurrent enrollment in MATH213 or MATH214 or MATH223. 2 hours lecture; 4 hours studio; 4.5 semester hours."
     },
     {
@@ -165,6 +178,7 @@
         "co": [],
         "title": "Physical Activites 1-2XX",
         "credits": "0.5",
+        "status": "incomplete",
         "description": "(I) A general overview of life fitness basics which includes exposure to educational units of Nutrition, Stress Management, Drug and Alcohol Awareness. Instruction in Fitness units provides the student an opportunity for learning and the beginning basics for a healthy life style. 2 hours lab; 0.5 semester hours. Repeatable for credit."
     },
     {
@@ -177,11 +191,12 @@
         "co": [],
         "title": "Principles of Economics",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I,II,S) Introduction to microeconomics and macroeconomics. This course focuses on applying the economic way of thinking and basic tools of economic analysis. Economic effects of public policies. Analysis of markets for goods, services and resources. Tools of cost-benefit analysis. Measures of overall economic activity. Determinants of economic growth. Monetary and fiscal policy. Prerequisites: None. 3 hours lecture; 3 semester hours."
     },
     {
         "id": "16",
-        "text": "CSCI 262",
+        "text": "CSCI 220",
         "color": "#5b9bd5",
         "row": 2,
         "column": 4,
@@ -189,7 +204,8 @@
         "co": [],
         "title": "Data Structures and Algorithms",
         "credits": "3",
-        "description": "This course teaches students the design and construction of data structures such as hash tables, trees, heaps, and graphs, analysis of operations on data structures, and design and analysis of algorithms on data structures such as graph search and minimum spanning tree algorithms.  Applications of data structures and algorithms on them are discussed in the context of computer systems.  Students will further refine programming skills in C++ by producing software implementations of selected data structures and algorithms. Prerequisite: CSCI261 with a C- or better."
+        "status": "incomplete",
+        "description": "This course teaches students the design and construction of data structures such as hash tables, trees, heaps, and graphs, analysis of operations on data structures, and design and analysis of algorithms on data structures such as graph search and minimum spanning tree algorithms.  Applications of data structures and algorithms on them are discussed in the context of computer systems.  Students will further refine programming skills in C++ by producing software implementations of selected data structures and algorithms. Prerequisite: CSCI200 with a C- or better."
     },
     {
         "id": "17",
@@ -201,6 +217,7 @@
         "co": [],
         "title": "Introduction to the Linux Operating System",
         "credits": "1",
+        "status": "incomplete",
         "description": "(I, II) Introduction to the Linux Operating System will teach students how to become proficient with using a Linux operating system from the command line. Topics will include: remote login (ssh), file system navigation, file commands, editors, compilation, execution, redirection, output, searching, processes, usage, permissions, compression, parsing, networking, and bash scripting. Prerequisite: CSCI200 or CSCI261."
     },
     {
@@ -213,6 +230,7 @@
         "co": [],
         "title": "Differential Equations",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II, S) Classical techniques for first and higher order equations and systems of equations. Laplace transforms. Phase-plane and stability analysis of non-linear equations and systems. Applications from physics, mechanics, electrical engineering, and environmental sciences. Prerequisites: Grade of C- or better in MATH112 or MATH122 or Concurrent Enrollment in MATH113. 3 hours lecture; 3 semester hours."
     },
     {
@@ -225,6 +243,7 @@
         "co": [],
         "title": "Global Studies",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II, S) Part of the Mines core curriculum, following the first-year requirement of HASS 100 (Nature and Human Values).  Modern scientists and engineers operate in an increasingly interconnected world.  This course is designed to enhance student capacity to understand, appreciate, and critically analyze the global contexts in which they will live and work.  Course material examines the modern world through specific thematic lenses, with an emphasis on the major patterns of cultural, political, and/or environmental change.  Students will develop original analysis through comparative empirical research on diverse societies and regions, and will communicate this analysis orally and in writing.  Prerequisite: HASS100. 3 hours lecture; 3 semester hours."
     },
     {
@@ -237,6 +256,7 @@
         "co": [],
         "title": "Physical Activites 1-2XX",
         "credits": "0.5",
+        "status": "incomplete",
         "description": "(I) A general overview of life fitness basics which includes exposure to educational units of Nutrition, Stress Management, Drug and Alcohol Awareness. Instruction in Fitness units provides the student an opportunity for learning and the beginning basics for a healthy life style. 2 hours lab; 0.5 semester hours. Repeatable for credit."
     },
     {
@@ -249,6 +269,7 @@
         "co": [],
         "title": "Discrete Mathematics",
         "credits": "3",
+        "status": "incomplete",
         "description": "This course is an introductory course in discrete mathematics and algebraic structures. Topics include: formal logic; proofs, recursion, analysis of algorithms; sets and combinatorics; relations, functions, and matrices; Boolean algebra and computer logic; trees, graphs, finite-state machines, and regular languages. Prerequisite: MATH112 or MATH113 or MATH122"
     },
     {
@@ -261,19 +282,21 @@
         "co": [],
         "title": "Computer Organization",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II) Covers the basic concepts of computer architecture and organization. Topics include machine level instructions and operating system calls used to write programs in assembly language, computer arithmetics, performance, processor design, and pipelining techniques. This course provides insight into the way computers operate at the machine level. Prerequisite: CSCI200 or CSCI261, CSCI262."
     },
     {
-        "id": "23",
-        "text": "Focus Area",
+        "id": "58",
+        "text": "CSCI 303",
         "color": "#00b050",
         "row": 3,
         "column": 5,
-        "pre": [], 
+        "pre": ["6"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Introduction to Data Science",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "This course will teach students the core skills needed for gathering, cleaning, organizing, analyzing, interpreting, and visualizing data.  Students will learn basic SQL for working with databases, basic Python programming for data manipulation, and the use and application of statistical and machine learning toolkits for data analysis.  The course will be primarily focused on applications, with an emphasis on working with real (non-synthetic) datasets. Prerequisite: CSCI101 or CSCI102 or CSCI128 or CSCI200 or CSCI261."
     },
     {
         "id": "24",
@@ -285,6 +308,7 @@
         "co": [],
         "title": "Free Elective", 
         "credits": "3",
+        "status": "incomplete",
         "description": "A free elective course. Choose any eligible course from the course catalog."
     },
     {
@@ -297,6 +321,7 @@
         "co": [],
         "title": "Linear Algebra",
         "credits": "3",
+        "status": "incomplete",
         "description": "Systems of linear equations, matrices, determinants and eigenvalues. Linear operators. Abstract vector spaces. Applications selected from linear programming, physics, graph theory, and other fields. Prerequisite: MATH112, MATH122, or PHGN100."
     },
     {
@@ -309,31 +334,34 @@
         "co": [], 
         "title": "Software Engineering",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II) Introduction to software engineering processes and object-oriented design principles. Topics include the Agile development methodology, test-driven development, UML diagrams, use cases and several object-oriented design patterns. Course work emphasizes good programming practices via version control and code reviews. Prerequisite: CSCI210 with grade of C- or higher, CSCI220 with grade of C- or higher or CSCI262 with grade of C- or higher."
     },
     {
         "id": "27",
-        "text": "Focus Area",
+        "text": "CSCI 403",
         "color": "#00b050",
         "row": 4,
         "column": 3,
-        "pre": [], 
+        "pre": ["16"],  
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Data Base Management",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "(I, II) Design and evaluation of information storage and retrieval systems, including defining and building a database and producing the necessary queries for access to the stored information. Relational database management systems, structured query language, and data storage facilities. Applications of data structures such as lists, inverted lists and trees. System security, maintenance, recovery and definition. Interfacing host languages to database systems and object-relational mapping tools. NoSQL databases and distributed databases. Prerequisite: CSCI200 with a grade of C- or higher or CSCI262 with a grade of C- or higher."
     },
     {
-        "id": "28",
-        "text": "Focus Area",
+        "id": "59",
+        "text": "MATH 334",
         "color": "#00b050",
         "row": 4,
         "column": 4,
-        "pre": [], 
+        "pre": ["12"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Introduction to Probability",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "(I,II,S) An introduction to the theory of probability essential for problems in science and engineering. Topics include axioms of probability, combinatorics, conditional probability and independence, discrete and continuous probability density functions, expectation, jointly distributed random variables, Central Limit Theorem, laws of large numbers. 3 hours lecture, 3 semester hours. Prerequisite: MATH213, MATH223 or MATH224."
     },
     {
         "id": "29",
@@ -345,6 +373,7 @@
         "co": [],
         "title": "Introduction to Statistics",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I,II,S) This course is an introduction to Statistics, including fundamentals of experimental design and data collection, the summary and display of data, propagation of error, interval estimation, hypothesis testing, and linear regression with emphasis on applications to science and engineering. Prerequisite: MATH111."
     },
     {
@@ -357,6 +386,7 @@
         "co": [],
         "title": "H&SS Mid-Level Elective",
         "credits": "3",
+        "status": "incomplete",
         "description": "A mid-level HASS course. Choose any eligible course from the course catalog."
     },
     {
@@ -369,6 +399,7 @@
         "co": [],
         "title": "Free Elective", 
         "credits": "3",
+        "status": "incomplete",
         "description": "A free elective course. Choose any eligible course from the course catalog."
     },
     {
@@ -381,19 +412,21 @@
         "co": [],
         "title": "Algorithms",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II) Reasoning about algorithm correctness (proofs, counterexamples).  Analysis of algorithms: asymptotic and practical complexity. Review of dictionary data structures (including balanced search trees). Priority queues. Advanced sorting algorithms (heapsort, radix sort). Advanced algorithmic concepts illustrated through sorting (randomized algorithms, lower bounds, divide and conquer). Dynamic programming. Backtracking.  Algorithms on unweighted graphs (traversals) and weighted graphs (minimum spanning trees, shortest paths, network flows and bipartite matching); NP-completeness and its consequences. Prerequisite: CSCI220 with a grade of C- or higher or CSCI262 with a grade of C- or higher, MATH213 or MATH223 or MATH224, MATH300 or MATH358 or CSCI358."
     },
     {
-        "id": "33",
-        "text": "Focus Area",
+        "id": "60",
+        "text": "MATH 335",
         "color": "#00b050",
         "row": 5,
         "column": 4,
-        "pre": [], 
+        "pre": ["59"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Introduction to Mathematical Statistics",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "(I,II) An introduction to the theory of statistics essential for problems in science and engineering. Topics include sampling distributions, methods of point estimation, methods of interval estimation, significance testing for population means and variances and goodness of fit, linear regression, analysis of variance. 3 hours lecture, 3 semester hours. Prerequisite: MATH334."
     },
     {
         "id": "34",
@@ -405,6 +438,7 @@
         "co": [],
         "title": "Advanced Software Engineering",
         "credits": "4.5",
+        "status": "incomplete",
         "description": "This capstone course has three primary goals: (1) to enable students to apply their course work knowledge to a challenging applied problem for a real client, (2) to enhance students verbal and written communication skills, and (3) to provide an introduction to ethical decision making in computer science. Ethics and communication skills are emphasized in a classroom setting.  The client work is done in small teams, either on campus or at the client site. Faculty advisors provide guidance related to the software engineering process, which is similar to Scrum. By the end of the course students must have a finished product with appropriate documentation. Prerequisite: CSCI306."
     },
     {
@@ -417,6 +451,7 @@
         "co": [],
         "title": "H&SS Mid-Level Elective",
         "credits": "3",
+        "status": "incomplete",
         "description": "A mid-level HASS course. Choose any eligible course from the course catalog."
     },
     {
@@ -429,43 +464,47 @@
         "co": [],
         "title": "Principles of Programming Languages",
         "credits": "3",
+        "status": "incomplete",
         "description": "This course takes a broad view of programming languages, focusing on the fundamental abstractions and principles of language design that transcend the specifics of any particular programming language. The course will emphasize functional programming, develop experience via programming projects, and cover topics such as lambda calculus, higher-order functions, induction, persistence, type systems, syntax, and evaluation. Ultimately, students will have an opportunity to improve programming skills, and develop a deeper understanding of how programming languages are designed and implemented. Prerequisite: CSCI306, CSCI358."
     },
     {
-        "id": "37",
-        "text": "Focus Area",
+        "id": "61",
+        "text": "MATH 324",
         "color": "#00b050",
         "row": 7,
         "column": 2,
-        "pre": [], 
+        "pre": ["29"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Statistical Modeling",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "Linear regression, analysis of variance, and design of experiments, focusing on the construction of models and evaluation of their fit. Techniques covered will include stepwise and best subsets regression, variable transformations, and residual analysis. Emphasis will be placed on the analysis of data with statistical software. Prerequisite: MATH201."
     },
     {
-        "id": "38",
-        "text": "Focus Area",
+        "id": "62",
+        "text": "CSCI 470",
         "color": "#00b050",
         "row": 7,
         "column": 3,
-        "pre": [], 
+        "pre": ["6", "29", "25"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Introduction to Machine Learning",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "(I) The goal of machine learning is to build computer systems that improve automatically with experience, which has been successfully applied to a variety of application areas, including, for example, gene discovery, financial forecasting, and credit card fraud detection. This introductory course will study both the theoretical properties of machine learning algorithms and their practical applications. Students will have an opportunity to experiment with machine learning techniques and apply them to a selected problem in the context of term projects.  Prerequisite: CSCI101 or CSCI102 or CSCI200 or CSCI261, MATH201, MATH332."
     },
     {
-        "id": "39",
-        "text": "Focus Area",
+        "id": "63",
+        "text": "MATH 432",
         "color": "#00b050",
         "row": 7,
         "column": 4,
-        "pre": [], 
+        "pre": ["61", "25", "60"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Spatial Statistics",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "(I,II) Modeling and analysis of data observed in a 2- or 3-dimensional region. Random fields, variograms, covariances, stationarity, nonstationarity, kriging, simulation, Bayesian hierarchical models, spatial regression, SAR, CAR, QAR, and MA models, Geary/Moran indices, point processes, K-function, complete spatial randomness, homogeneous and inhomogeneous processes, marked point processes. Prerequisite: MATH324, MATH332, MATH335."
     },
     {
         "id": "40",
@@ -477,6 +516,7 @@
         "co": [],
         "title": "H&SS 400 Level Elective",
         "credits": "3",
+        "status": "incomplete",
         "description": "A 400 level HASS course. Choose any eligible course from the course catalog."
     },
     {
@@ -489,42 +529,46 @@
         "co": [],
         "title": "Operating Systems",
         "credits": "3",
+        "status": "incomplete",
         "description": "(I, II) Introduces the essential concepts in the design and implementation of operating systems: what they can do, what they contain, and how they are implemented. Despite rapid OS growth and development, the fundamental concepts learned in this course will endure. We will cover the following high-level OS topics, roughly in this order: computer systems, processes, processor scheduling, memory management, virtual memory, threads, and process/thread synchronization. This course provides insight into the internal structure of operating systems; emphasis is on concepts and techniques that are valid for all computers. Prerequisite: CSCI220 with a grade of C- or higher or CSCI262 with a grade of C- or higher, CSCI274, CSCI341."
     },
     {
-        "id": "42",
-        "text": "Focus Area",
+        "id": "64",
+        "text": "CSCI 423",
         "color": "#00b050",
         "row": 8,
         "column": 2,
-        "pre": [], 
+        "pre": ["17", "26", "29", "59"], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Computer Simulation",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "A first course in computer simulation using formal learning groups and emphasizing the rigorous development of simulation applications. Topics will include random number generation, Monte Carlo simulation, discrete event simulation, and the mathematics behind their proper implementation and analysis (random variates, arrival time modeling, infinite horizon statistics, batch means and sampling techniques). The course uses learning group assignments, quizzes, programming projects (using Linux) and exams for assessment. Prerequisite: (CSCI210 or CSCI274) AND CSCI306 AND (MATH201 or MATH334)."
     },
     {
-        "id": "43",
-        "text": "Focus Area",
+        "id": "33",
+        "text": "CS Elective",
         "color": "#00b050",
         "row": 8,
         "column": 3,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "CS Elective",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "A CS elective course. Choose any eligible course from the course catalog."
     },
     {
-        "id": "44",
-        "text": "Focus Area",
+        "id": "23",
+        "text": "Free Elective",
         "color": "#00b050",
         "row": 8,
         "column": 4,
         "pre": [], 
         "co": [],
-        "title": "Focus Area",
-        "credits": "",
-        "description": "A focus area course. Select a track from the dropdown menu to see potential courses for this node."
+        "title": "Free Elective",
+        "credits": "3",
+        "status": "incomplete",
+        "description": "A free elective course. Choose any eligible course from the course catalog."
     }
 ]
