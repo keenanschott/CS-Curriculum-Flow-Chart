@@ -20,9 +20,7 @@ Next, let's talk about course completion. As seen below, a green indicator will 
 
 Next, when a node is clicked, information will appear on the course associated with it. The course title appears at the top, and, in the body of the modal, credits, completion state, and a description of the course are present. The dropdown on the right allows the user to change the completion state of a node, which will be reflected in the node's appearance and, if the user is logged in, saved to the database. 
 
-<center>
 ![`node.png`](https://i.imgur.com/TZ1E1Xb.png "node.png")
-</center>
 
 ## Closing Remarks
 
