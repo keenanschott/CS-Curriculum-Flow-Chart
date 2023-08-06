@@ -3,14 +3,7 @@ const app = express();
 const { Pool } = require('pg');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
-
-const dbConfig = {
-  user: 'ciphdhty',
-  host: 'hansken.db.elephantsql.com',
-  database: 'ciphdhty',
-  password: 'skkBqLbyMJ1dP5U-Rs2XbHJ8dI47zBv_',
-  port: 5432, 
-};
+const dbConfig = require('./dbConfig');
 
 const pool = new Pool(dbConfig);
 app.use(cors());
