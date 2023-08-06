@@ -63,3 +63,8 @@
   background-color: #B93F28;
   color: white;
 }
+
+.tall-navbar .dropdown,
+.tall-navbar .user-icon {
+  display: none;
+}

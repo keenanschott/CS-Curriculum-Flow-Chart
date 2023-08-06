@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function NodeModalContent({ nodeData, selectedStatus, onStatusChange }) {
 
     const darkerColor =
-        nodeData.color === "#c285a3" ? "#935f76" : nodeData.color === "#5b9bd5" ? "#3a6a97" : "#5c636a";
+        nodeData.color === "#c285a3" ? "#935f76" : nodeData.color === "#5b9bd5" ? "#3a6a97" : "#008040";
 
     const circleStyle = {
         display: 'inline-flex',
