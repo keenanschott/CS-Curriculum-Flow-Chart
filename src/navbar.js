@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Dropdown, Modal, Button } from 'react-bootstrap';
 import './nav.css';
-import axios from 'axios'; // Import Axios to make API calls
+import axios from 'axios'; 
 import userIcon from './user.png';
 
 const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => {
-  const [selectedYear, setSelectedYear] = React.useState('2022-23'); // Set default year
-  const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); // Set default value 
+  const [selectedYear, setSelectedYear] = React.useState('2022-23'); 
+  const [selectedTrack, setSelectedTrack] = React.useState('Computer Science'); 
 
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginMessage, setLoginMessage] = useState('');
 
-  const backendURL = 'http://localhost:3001'; // Update this with the correct backend URL
+  const backendURL = 'http://localhost:3001'; 
   const apiClient = axios.create({
     baseURL: backendURL,
   });
@@ -22,7 +22,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
   const [signupUsername, setSignupUsername] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
   const [signupMessage, setSignupMessage] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // State to track authentication status
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
 
   const handleSignupSubmit = async () => {
@@ -33,10 +33,9 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
       });
 
       if (response.status === 200) {
-        setIsAuthenticated(true); // Set isAuthenticated to true after successful sign up
-        setShowSignupModal(false); // Close the signup modal
+        setIsAuthenticated(true); 
+        setShowSignupModal(false);
         setLoginMessage('');
-        // You can perform any actions after successful sign up here
       }
     } catch (error) {
       setSignupMessage('Sign up failed');
@@ -64,8 +63,8 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
   /* eslint-enable react-hooks/exhaustive-deps */
 
   const handleShowSignupModal = () => {
-    setShowLoginModal(false); // Close the login modal
-    setShowSignupModal(true); // Show the sign-up modal
+    setShowLoginModal(false); 
+    setShowSignupModal(true); 
   };
 
   const handleLoginSubmit = async () => {
@@ -83,10 +82,9 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
 
 
       if (response.status === 200) {
-        setIsAuthenticated(true); // Set isAuthenticated to true after successful login
+        setIsAuthenticated(true); 
         setLoginMessage('');
-        setShowLoginModal(false); // Close the login modal
-        // You can redirect or perform any actions after successful login here
+        setShowLoginModal(false); 
       }
     } catch (error) {
       setLoginMessage('Login failed, try again!');
@@ -94,25 +92,19 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
   };
 
   const handleLogout = () => {
-    // Open the logout confirmation modal
     setShowLogoutConfirmation(true);
   };
 
   const handleConfirmLogout = () => {
-    // Perform any actions you want to perform during logout here
-
     setUsername('');
     setPassword('');
     setSignupUsername('');
     setSignupPassword('');
-    setIsAuthenticated(false); // Set isAuthenticated to false to log out the user
-
-    // Close the logout confirmation modal
+    setIsAuthenticated(false); 
     setShowLogoutConfirmation(false);
   };
 
   const handleCancelLogout = () => {
-    // Close the logout confirmation modal if the user cancels logout
     setShowLogoutConfirmation(false);
   };
 
@@ -225,7 +217,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
               marginTop: '3px',
               cursor: 'pointer',
               filter: 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)',
-              transition: 'filter 0.3s', // Add a transition for smooth effect
+              transition: 'filter 0.3s', 
             }}
             onClick={() => handleLogout()}
             onMouseEnter={(e) => {
@@ -247,7 +239,7 @@ const Navbar = ({ onDropdownChange, completionStatus, setCompletionStatus }) => 
                 marginTop: '3px',
                 cursor: 'pointer',
                 filter: 'brightness(0) saturate(100%) invert(46%) sepia(5%) saturate(803%) hue-rotate(166deg) brightness(95%) contrast(85%)',
-                transition: 'filter 0.3s', // Add a transition for smooth effect
+                transition: 'filter 0.3s', 
               }}
               onClick={() => setShowLoginModal(true)}
               onMouseEnter={(e) => {
