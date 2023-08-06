@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# CS Curriculum Flowchart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
 
-## Available Scripts
+I run the front-end locally on port `3000` and the back-end locally on port `3001` using `npm` and `node`. For help with setup, I can be contacted at keenanschott@mines.edu.
 
-In the project directory, you can run:
+## User Guide
 
-### `npm start`
+The dropdowns allow the user to select what year they *entered* Mines as well as what track they would like to view. The login system is not affiliated with Mines in any capacity and is connected to a database I set up. Raw passwords are not stored. Each course sits on a card within the body of the page, which will be addressed as *nodes* from this point on, and each node contains important information about itself as well as other nodes. The page looks like this:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![`page.png`](https://i.imgur.com/mVw6eZ5.png "page.png")
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+First, let's talk about the border of a node. The redish border indicates that the course is part of the *Mines Core*, the blueish border indicates that the course is part of the *CS Core*, and the greenish border indicates that the course is part of a track's *Focus Area*. When hovering over a given node, every node that is a prerequisite will have its border turn black and it will begin to pulsate. Moreover, when hovering over a given node, every node that is a corequisite will have its border turn a dashed blue and it will begin to pulsate.
 
-### `npm test`
+![`req.gif`](https://i.imgur.com/KZpeOQe.gif "req.gif")
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Next, let's talk about course completion. As seen below, a green indicator will appear on a node when it's marked as complete, a blue indicator will appear on a node when it's marked as in-progress, and incomplete nodes will have no special marking. 
 
-### `npm run build`
+![`completion.png`](https://i.imgur.com/sbW20bO.png "completion.png")
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Next, when a node is clicked, information will appear on the course associated with it. The course title appears at the top, and, in the body of the modal, credits, completion state, and a description of the course are present. The dropdown on the right allows the user to change the completion state of a node, which will be reflected in the node's appearance and, if the user is logged in, saved to the database. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![`node.png`](https://i.imgur.com/TZ1E1Xb.png "node.png")
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Closing Remarks
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I currently don't have any plans to host the site anywhere, but please feel free to work on any issues or expand on the project.
