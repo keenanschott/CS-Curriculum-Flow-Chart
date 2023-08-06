@@ -16,15 +16,11 @@ First, let's talk about the border of a node. The redish border indicates that t
 
 Next, let's talk about course completion. As seen below, a green indicator will appear on a node when it's marked as complete, a blue indicator will appear on a node when it's marked as in-progress, and incomplete nodes will have no special marking. 
 
-<div style="text-align:center;">
 ![`completion.png`](https://i.imgur.com/sbW20bO.png "completion.png")
-</div>
 
 Next, when a node is clicked, information will appear on the course associated with it. The course title appears at the top, and, in the body of the modal, credits, completion state, and a description of the course are present. The dropdown on the right allows the user to change the completion state of a node, which will be reflected in the node's appearance and, if the user is logged in, saved to the database. 
 
-<div style="text-align:center;">
 ![`node.png`](https://i.imgur.com/TZ1E1Xb.png "node.png")
-</div>
 
 ## Closing Remarks
 
