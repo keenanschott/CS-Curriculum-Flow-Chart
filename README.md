@@ -1,9 +1,5 @@
 # CS Curriculum Flowchart
 
-## Setup
-
-I run the front-end locally on port `3000` and the back-end locally on port `3001` using `npm` and `node`. For help with setup, I can be contacted at keenanschott@mines.edu.
-
 ## User Guide
 
 The dropdowns allow the user to select what year they *entered* Mines as well as what track they would like to view. The login system is not affiliated with Mines in any capacity and is connected to a database I set up. Raw passwords are not stored. Each course sits on a card within the body of the page, which will be addressed as *nodes* from this point on, and each node contains important information about itself as well as other nodes. The page looks like this:
